@@ -5,15 +5,14 @@ import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {NavLink} from "react-router-dom";
+import icon from "../../img/image1.png"
 
 const Header = () => {
  
 return (
     <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
-            <Navbar.Brand href="/" style={{"color":'gold'}}>
-                <FontAwesomeIcon icon ={faVideoSlash}/>Gold
-            </Navbar.Brand>
+            <img src={icon} height="50px" width="100px" />
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -22,7 +21,7 @@ return (
                         navbarScroll
                     >
                     <NavLink className ="nav-link" to="/">Home</NavLink>
-                    <NavLink className ="nav-link" to="/watchList">Watch List</NavLink>      
+                    <NavLink className ="nav-link" to="/groupMember">Group Members</NavLink>      
                 </Nav>
                 <Button variant="outline-info" className="me-2">Login</Button>
                 <Button variant="outline-info">Register</Button>
