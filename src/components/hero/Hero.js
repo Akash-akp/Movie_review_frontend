@@ -16,6 +16,34 @@ const Hero = ({movies}) => {
         navigate(`/Reviews/${movieId}`);
     }
 
+    function convertDate(date) {
+        const dateList = date.split("-");
+        const year = dateList[0];
+        const monthNumber = parseInt(dateList[1], 10); 
+        const day = dateList[2];
+    
+        const monthMap = {
+            1: "January",
+            2: "February",
+            3: "March",
+            4: "April",
+            5: "May",
+            6: "June",
+            7: "July",
+            8: "August",
+            9: "September",
+            10: "October",
+            11: "November",
+            12: "December"
+        };
+    
+        const month = monthMap[monthNumber];
+    
+        return `${month} ${day}, ${year}`;
+    }
+    
+    console.log(convertDate("2023-10-27"));
+
   return (
     <div className ='movie-carousel-container'>
       <Carousel>
@@ -30,7 +58,8 @@ const Hero = ({movies}) => {
                                         <img src={movie.poster} alt="" />
                                     </div>
                                     <div className="movie-title">
-                                        <h4>{movie.title}</h4>
+                                        <h2>{movie.title}</h2>
+                                        <h6>{convertDate(movie.releaseDate)}</h6>
                                     </div>
                                     <div className="movie-buttons-container">
                                         <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>

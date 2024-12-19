@@ -21,6 +21,7 @@ function App() {
       console.log(response);
 
       setMovies(response.data);
+      console.log(movie)
     } catch (err) {
       console.log(err);
     }
